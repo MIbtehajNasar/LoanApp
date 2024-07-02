@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+    .label {
+      font-weight: bold;
+      color: #34495e;
+    }
+    .value {
+      color: #2c3e50;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Loan Term Sheet</h1>
+
+  <div class="section">
+    <p><span class="label">Name:</span> <span class="value"><%= @loan_request.name %></span></p>
+    <p><span class="label">Email:</span> <span class="value"><%= @loan_request.email %></span></p>
+    <p><span class="label">Phone:</span> <span class="value"><%= @loan_request.phone %></span></p>
+    <p><span class="label">Address:</span> <span class="value"><%= @loan_request.address %></span></p>
+    <p><span class="label">Loan Term:</span> <span class="value"><%= @loan_request.loan_term %> months</span></p>
+    <p><span class="label">Purchase Price:</span> <span class="value">$<%= @loan_request.purchase_price %></span></p>
+    <p><span class="label">Repair Budget:</span> <span class="value">$<%= @loan_request.repair_budget %></span></p>
+    <p><span class="label">After Repair Value (ARV):</span> <span class="value">$<%= @loan_request.arv %></span></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<div class="max-w-md mx-auto bg-white p-8 rounded-md shadow-md mt-6">
+  <h2 class="text-2xl font-bold mb-6 text-center">Loan Application Details</h2>
+  
+  <div class="space-y-4">
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">Address</h3>
+      <p class="text-gray-700"><%= @loan_request.address %></p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">Loan Term (in months)</h3>
+      <p class="text-gray-700"><%= @loan_request.loan_term %></p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">Purchase Price</h3>
+      <p class="text-gray-700">$<%= number_with_precision(@loan_request.purchase_price, precision: 2) %></p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">Repair Budget</h3>
+      <p class="text-gray-700">$<%= number_with_precision(@loan_request.repair_budget, precision: 2) %></p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">After Repair Value (ARV)</h3>
+      <p class="text-gray-700">$<%= number_with_precision(@loan_request.arv, precision: 2) %></p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">Name</h3>
+      <p class="text-gray-700"><%= @loan_request.name %></p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">Email</h3>
+      <p class="text-gray-700"><%= @loan_request.email %></p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-medium text-gray-900">Phone</h3>
+      <p class="text-gray-700"><%= @loan_request.phone %></p>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to 'Back', root_path, class: "w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+  </div>
+</div>

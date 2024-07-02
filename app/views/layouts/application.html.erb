@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LoanApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>LoanApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application" %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
 
-  <body>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4">
+    <% flash.each do |key, value| %>
+      <div class="mt-4 p-4 rounded-md shadow-md <% if key == 'notice' %>bg-green-100 text-green-800<% else %>bg-red-100 text-red-800<% end %>">
+        <%= value %>
+      </div>
+    <% end %>
     <%= yield %>
-  </body>
+  </div>
+</body>
 </html>

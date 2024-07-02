@@ -1,0 +1,23 @@
+<body class="p-8 font-sans text-gray-800">
+  <h1 class="text-2xl font-bold border-b-2 border-gray-700 pb-2 mb-4">Loan Term Sheet</h1>
+
+  <div class="mb-8">
+    <p class="mb-2"><span class="font-bold text-gray-600">Name:</span> <span class="text-gray-800"><%= loan_request.name %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Email:</span> <span class="text-gray-800"><%= loan_request.email %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Phone:</span> <span class="text-gray-800"><%= loan_request.phone %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Address:</span> <span class="text-gray-800"><%= loan_request.address %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Loan Term:</span> <span class="text-gray-800"><%= loan_request.loan_term %> months</span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Purchase Price:</span> <span class="text-gray-800">$<%= loan_request.purchase_price %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Repair Budget:</span> <span class="text-gray-800">$<%= loan_request.repair_budget %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">After Repair Value (ARV):</span> <span class="text-gray-800">$<%= loan_request.arv %></span></p>
+  </div>
+
+  <h2 class="text-xl font-bold border-b-2 border-gray-700 pb-2 mb-4">Calculated Values</h2>
+
+  <div>
+    <p class="mb-2"><span class="font-bold text-gray-600">Loan Amount:</span> <span class="text-gray-800">$<%= number_with_precision(calculation[:loan_amount], precision: 2) %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Interest Expense:</span> <span class="text-gray-800">$<%= number_with_precision(calculation[:interest_expense], precision: 2) %></span></p>
+    <p class="mb-2"><span class="font-bold text-gray-600">Estimated Profit:</span> <span class="text-gray-800">$<%= number_with_precision(calculation[:profit], precision: 2) %></span></p>
+  </div>
+</body>
+</html>
